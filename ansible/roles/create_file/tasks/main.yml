@@ -1,0 +1,9 @@
+---
+- name: create an empty file
+  copy:
+    content: ""
+    dest: /etc/iaac
+    force: no
+    group: azureuser
+    owner: azureuser
+    mode: 0500

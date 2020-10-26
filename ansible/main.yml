@@ -1,0 +1,9 @@
+---
+- hosts: iaas
+  become: yes
+  roles:  
+    - create_file
+
+- hosts: all
+  roles:  
+    - register_file_content
