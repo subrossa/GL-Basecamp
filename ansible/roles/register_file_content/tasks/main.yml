@@ -4,6 +4,3 @@
     src: /etc/issue
   register: file
 
-- debug: msg="{{ file['content'] | b64decode }}"
-
-- debug: var=inventory_hostname
