@@ -1,9 +1,18 @@
----
-- hosts: iaas
+--
+- name: run create_file role
+  hosts: iaas
   become: yes
   roles:  
     - create_file
 
-- hosts: all
+- name: run register_file_content role
+  hosts: all
   roles:  
     - register_file_content
+
+
+- name: print issue and hostnames
+  hosts: all
+  tasks:
+    - debug: msg="{{ file['content'] | b64decode }}"
+    - debug: var=inventory_hostname
